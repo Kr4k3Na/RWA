@@ -1,0 +1,18 @@
+<!-- product-profile.html -->
+@if (product(); as p) {
+  <div class="product-profile">
+    <div class="gallery">
+      @for (img of p.image; track img) {
+        <img [src]="img" [alt]="p.title" class="product-image" />
+      }
+    </div>
+
+    <div class="product-info">
+      <h1>{{ p.title }}</h1>
+      <p class="price">Price: {{ p.price }}</p>
+      <p class="category">Category: {{ p.category }}</p>
+      <p class="state">State: {{ p.state === 'new' ? 'Novo' : 'Polovno' }}</p>
+      <p class="description">Description:<br>{{ p.description || 'Nema opisa.' }}</p>
+    </div>
+  </div>
+}
