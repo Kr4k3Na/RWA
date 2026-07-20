@@ -1,0 +1,97 @@
+.product-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: auto;
+  max-width: 900px;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  position: relative;
+}
+
+.product-image {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #f4f4f4;
+}
+
+/* Levo i Desno dugmici dele istu grid ćeliju kao slika, u donjem desnom uglu */
+.product-profile > div:not(.product-info) {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: end;
+  cursor: pointer;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ddd;
+  font-size: 0.85rem;
+  user-select: none;
+  transition: background 0.15s ease;
+  margin-bottom: 0.75rem;
+}
+
+.product-profile > div:not(.product-info):hover {
+  background: #fff;
+  border-color: #bbb;
+}
+
+.product-profile > div:not(.product-info):nth-of-type(1) {
+  margin-right: calc(0.75rem + 2.25rem + 0.5rem);
+}
+
+.product-profile > div:not(.product-info):nth-of-type(2) {
+  margin-right: 0.75rem;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto; /* ako opis ne stane, skroluje se samo ova kolona, ne cela stranica */
+}
+
+.product-info h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.product-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.price {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.category,
+.state {
+  color: #777;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.description {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+  color: #555;
+}

@@ -1,18 +1,18 @@
-<!-- product-profile.html -->
 @if (product(); as p) {
-  <div class="product-profile">
-    <div class="gallery">
-      @for (img of p.image; track img) {
-        <img [src]="img" [alt]="p.title" class="product-image" />
-      }
+<div class="product-profile">
+    <img [src]="p.image[currentImage]" [alt]="p.title" class="product-image" />
+    <div (click)="previousImage()">
+        <b><</b>
     </div>
-
+    <div (click)="nextImage()">
+        <b>></b>
+    </div>
     <div class="product-info">
-      <h1>{{ p.title }}</h1>
-      <p class="price">Price: {{ p.price }}</p>
-      <p class="category">Category: {{ p.category }}</p>
-      <p class="state">State: {{ p.state === 'new' ? 'Novo' : 'Polovno' }}</p>
-      <p class="description">Description:<br>{{ p.description || 'Nema opisa.' }}</p>
+        <h1>{{ p.title }}</h1>
+        <p class="price">Cena: {{ p.price }}</p>
+        <p class="category">Kategorija: {{ p.category }}</p>
+        <p class="state">Stanje: {{ p.state === 'new' ? 'Novo' : 'Polovno' }}</p>
+        <p class="description">Opis:<br>{{ p.description || 'Nema opisa.' }}</p>
     </div>
-  </div>
+</div>
 }

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Ako imaš wrapper div oko <router-outlet> ili sadržaja, stavi mu ovu klasu */
+.app-shell {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 3rem;
+  /* justify-content nije postavljen na center -> sadržaj ostaje levo,
+     desna strana ostaje prazna za dugmiće aukcije */
+}
