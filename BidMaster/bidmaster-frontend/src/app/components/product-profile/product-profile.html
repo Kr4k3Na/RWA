@@ -1,18 +1,50 @@
 @if (product(); as p) {
-<div class="product-profile">
-    <img [src]="p.image[currentImage]" [alt]="p.title" class="product-image" />
-    <div (click)="previousImage()">
-        <b><</b>
-    </div>
-    <div (click)="nextImage()">
-        <b>></b>
-    </div>
-    <div class="product-info">
-        <h1>{{ p.title }}</h1>
-        <p class="price">Cena: {{ p.price }}</p>
-        <p class="category">Kategorija: {{ p.category }}</p>
-        <p class="state">Stanje: {{ p.state === 'new' ? 'Novo' : 'Polovno' }}</p>
-        <p class="description">Opis:<br>{{ p.description || 'Nema opisa.' }}</p>
-    </div>
+<div class="product-page">
+
+    <!-- HERO - slika preko celog ekrana -->
+    <section class="hero">
+        <img [src]="p.image[currentImage]" [alt]="p.title" class="hero-image" />
+        <div class="hero-overlay"></div>
+
+        <h1 class="hero-title">{{ p.title }}</h1>
+
+        @if (p.image.length > 1) {
+        <button type="button" class="nav-btn prev" (click)="previousImage()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button type="button" class="nav-btn next" (click)="nextImage()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        }
+
+        <div class="scroll-hint">Skroluj za detalje</div>
+    </section>
+
+    <!-- DETALJI -->
+    <section class="details">
+        <div class="details-grid">
+            <div class="product-info">
+                <p class="price">{{ p.price }} €</p>
+                <p class="category">Kategorija: {{ p.category }}</p>
+                <p class="state">Stanje: {{ p.state === 'new' ? 'Novo' : 'Polovno' }}</p>
+
+                <button type="button" class="bid-btn">Postavi ponudu</button>
+            </div>
+
+            <div class="product-description">
+                <h2>Opis</h2>
+                <p>{{ p.description || 'Nema opisa.' }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIDDERI -->
+    <section class="bidders">
+        <h2>Trenutne ponude</h2>
+        <div class="bidders-list">
+            <!-- ovde ide lista biddera -->
+        </div>
+    </section>
+
 </div>
 }
