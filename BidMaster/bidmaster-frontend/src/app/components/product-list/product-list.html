@@ -4,23 +4,24 @@
     <h1>Proizvodi</h1>
   </header>
 
+  @if(products$ | async; as products) {
   <div class="product-grid">
-    @for (p of products(); track p.id) {
-      <article class="product-card">
-        <div class="card-image-wrap">
-          <img [src]="p.image[0]" [alt]="p.title" class="card-image" />
-        </div>
+    @for (p of products; track p.id) {
+    <article class="product-card">
+      <div class="card-image-wrap">
+        <img [src]="p.image[0]" [alt]="p.title" class="card-image" />
+      </div>
 
-        <div class="card-body">
-          <h2 class="card-title">{{ p.title }}</h2>
-          <p class="card-price">{{ p.price }} €</p>
+      <div class="card-body">
+        <h2 class="card-title">{{ p.title }}</h2>
+        <p class="card-price">{{ p.price }} €</p>
 
-          <button type="button" class="details-btn" (click)="viewDetails(p.id)">
-            Vidi detalje
-          </button>
-        </div>
-      </article>
+        <button type="button" class="details-btn" (click)="viewDetails(p.id)">
+          Vidi detalje
+        </button>
+      </div>
+    </article>
     }
   </div>
-
+  }
 </div>

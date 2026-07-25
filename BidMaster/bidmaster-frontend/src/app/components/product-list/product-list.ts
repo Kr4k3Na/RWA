@@ -1,39 +1,27 @@
-import { Component, signal } from '@angular/core';
-import { Product } from '../../models/product.model';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { selectAllProducts } from '../../store/product/product.reducer';
+import { loadProducts } from '../../store/product/product.actions';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
-export class ProductList {
+export class ProductList implements OnInit {
 
-  products = signal<Product[]>([
-    {
-      id: '1',
-      title: 'iPhone 13 Pro',
-      description: 'Iphone 13 Pro, 256GB, boja grafit. Kupljen pre godinu dana, koriscen uz zastitnu masku i staklo od prvog dana. Baterija na 91% kapaciteta. U kompletu ide originalna kutija i kabl.',
-      price: '650',
-      category: 'Telefoni',
-      image: [],
-      state: 'used',
-      sellerId: 'seller-101'
-    },
-    {
-      id: '2',
-      title: 'Planinski bicikl Trek Marlin 7',
-      description: 'Potpuno nov, nekoriscen, jos u foliji. Aluminijumski ram velicine M, 29-inch tockovi, hidraulicne kocnice. Idealan za teren i grad.',
-      price: '890',
-      category: 'Sport i rekreacija',
-      image: [],
-      state: 'new',
-      sellerId: 'seller-202'
-    }
-  ])
+  private readonly store = inject(Store);
 
-  constructor(private router: Router) {}
+  products$ = this.store.select(selectAllProducts);
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    this.store.dispatch(loadProducts({ page: 0, size: 10 }))
+  }
 
   viewDetails(id: string) {
     this.router.navigate(['/products', id]);
