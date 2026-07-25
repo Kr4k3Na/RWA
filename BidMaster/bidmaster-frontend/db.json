@@ -1,0 +1,382 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "iPhone 13 Pro Max 256GB",
+      "description": "Odlično očuvan iPhone 13 Pro Max, plave boje, sa originalnom kutijom i punjačem. Baterija na 89% kapaciteta.",
+      "price": "650",
+      "category": "Elektronika",
+      "image": [
+        "https://picsum.photos/seed/iphone13/600/400",
+        "https://picsum.photos/seed/iphone13b/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-01"
+    },
+    {
+      "id": "2",
+      "title": "Sony PlayStation 5 Disc Edition",
+      "description": "Nova, nekorišćena PS5 konzola, još u fabričkom pakovanju sa dva DualSense kontrolera.",
+      "price": "480",
+      "category": "Gejming",
+      "image": [
+        "https://picsum.photos/seed/ps5/600/400"
+      ],
+      "state": "new",
+      "sellerId": "seller-02"
+    },
+    {
+      "id": "3",
+      "title": "Rolex Submariner Vintage Sat",
+      "description": "Kolekcionarski ručni sat iz 1985. godine, mehanički, sa kožnim kaišem. Servisiran pre mesec dana.",
+      "price": "1200",
+      "category": "Nakit i satovi",
+      "image": [
+        "https://picsum.photos/seed/rolex/600/400",
+        "https://picsum.photos/seed/rolexb/600/400",
+        "https://picsum.photos/seed/rolexc/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-03"
+    },
+    {
+      "id": "4",
+      "title": "MacBook Air M2 13\" 2023",
+      "description": "Laptop u odličnom stanju, korišćen isključivo za kancelarijski rad. Uključena originalna ambalaža.",
+      "price": "890",
+      "category": "Elektronika",
+      "image": [
+        "https://picsum.photos/seed/macbookair/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-01"
+    },
+    {
+      "id": "5",
+      "title": "Planinski bicikl Trek Marlin 7",
+      "description": "Bicikl 29 inča, aluminijumski ram, hidraulične kočnice. Vožen samo par puta.",
+      "price": "420",
+      "category": "Sport i rekreacija",
+      "image": [
+        "https://picsum.photos/seed/trekbike/600/400",
+        "https://picsum.photos/seed/trekbikeb/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-04"
+    },
+    {
+      "id": "6",
+      "title": "Kožna fotelja Chesterfield",
+      "description": "Antikvarna fotelja od prave kože, braon boje, restaurirana 2022. godine. Idealna za kabinet ili dnevnu sobu.",
+      "price": "350",
+      "category": "Nameštaj",
+      "image": [
+        "https://picsum.photos/seed/chesterfield/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-05"
+    },
+    {
+      "id": "7",
+      "title": "Canon EOS R6 Mark II sa objektivom",
+      "description": "Profesionalni fotoaparat, kupljen pre 6 meseci, malo korišćen. Uključen 24-105mm objektiv.",
+      "price": "1750",
+      "category": "Elektronika",
+      "image": [
+        "https://picsum.photos/seed/canoneos/600/400",
+        "https://picsum.photos/seed/canoneosb/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-06"
+    },
+    {
+      "id": "8",
+      "title": "Originalna slika - Uljano platno \"Zalazak sunca\"",
+      "description": "Ručno rađena umetnička slika lokalnog slikara, dimenzije 60x80cm, sertifikat o autentičnosti.",
+      "price": "280",
+      "category": "Umetnost",
+      "image": [
+        "https://picsum.photos/seed/painting/600/400"
+      ],
+      "state": "new",
+      "sellerId": "seller-07"
+    },
+    {
+      "id": "9",
+      "title": "Kolekcija vinilnih ploča - Rock klasici",
+      "description": "Set od 15 vinilnih ploča čuvenih rok bendova iz 70-ih i 80-ih godina, dobro očuvane.",
+      "price": "150",
+      "category": "Muzika",
+      "image": [
+        "https://picsum.photos/seed/vinyl/600/400",
+        "https://picsum.photos/seed/vinylb/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-08"
+    },
+    {
+      "id": "10",
+      "title": "Samsung QLED TV 65\" 4K",
+      "description": "Televizor kupljen pre godinu dana, bez ogrebotina, sa daljinskim i garancijom do kraja godine.",
+      "price": "620",
+      "category": "Elektronika",
+      "image": [
+        "https://picsum.photos/seed/samsungtv/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-09"
+    },
+    {
+      "id": "11",
+      "title": "Ručno rađeni tepih - Persijski dizajn",
+      "description": "Autentičan tepih rađen tehnikom ručnog tkanja, vuna, dimenzije 200x300cm.",
+      "price": "540",
+      "category": "Nameštaj",
+      "image": [
+        "https://picsum.photos/seed/carpet/600/400",
+        "https://picsum.photos/seed/carpetb/600/400"
+      ],
+      "state": "new",
+      "sellerId": "seller-10"
+    },
+    {
+      "id": "12",
+      "title": "Električna gitara Fender Stratocaster",
+      "description": "Model iz 2019. godine, sunburst boja, uključen kofer i pojačalo malih dimenzija.",
+      "price": "780",
+      "category": "Muzika",
+      "image": [
+        "https://picsum.photos/seed/fender/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-11"
+    },
+    {
+      "id": "13",
+      "title": "Dijamantski privezak 0.5 karata",
+      "description": "Zlatni privezak sa sertifikovanim dijamantom, 18k zlato, original kutija i sertifikat.",
+      "price": "950",
+      "category": "Nakit i satovi",
+      "image": [
+        "https://picsum.photos/seed/diamond/600/400",
+        "https://picsum.photos/seed/diamondb/600/400"
+      ],
+      "state": "new",
+      "sellerId": "seller-12"
+    },
+    {
+      "id": "14",
+      "title": "Skije Atomic Redster sa vezovima",
+      "description": "Skijaška oprema, dužina 170cm, korišćena jednu sezonu, uključeni vezovi Marker.",
+      "price": "310",
+      "category": "Sport i rekreacija",
+      "image": [
+        "https://picsum.photos/seed/skis/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-13"
+    },
+    {
+      "id": "15",
+      "title": "Antikni pisaći sto od hrasta",
+      "description": "Sto iz sredine 20. veka, masivno drvo, sa fiokama i originalnim bravicama.",
+      "price": "460",
+      "category": "Nameštaj",
+      "image": [
+        "https://picsum.photos/seed/desk/600/400",
+        "https://picsum.photos/seed/deskb/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-14"
+    },
+    {
+      "id": "16",
+      "title": "DJI Mavic 3 Pro Dron",
+      "description": "Profesionalni dron sa Hasselblad kamerom, korišćen 5 puta, sve u originalnoj kutiji.",
+      "price": "1450",
+      "category": "Elektronika",
+      "image": [
+        "https://picsum.photos/seed/dji/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-15"
+    },
+    {
+      "id": "17",
+      "title": "Kompletan set kuhinjskog posuđa Zwilling",
+      "description": "Nemačko posuđe od nerđajućeg čelika, 10 komada, nikad korišćeno, u originalnom pakovanju.",
+      "price": "390",
+      "category": "Kuća i bašta",
+      "image": [
+        "https://picsum.photos/seed/cookware/600/400",
+        "https://picsum.photos/seed/cookwareb/600/400"
+      ],
+      "state": "new",
+      "sellerId": "seller-16"
+    },
+    {
+      "id": "18",
+      "title": "Retro Vespa skuter 1978",
+      "description": "Restauriran skuter, radi besprekorno, registrovan do marta naredne godine.",
+      "price": "2200",
+      "category": "Vozila",
+      "image": [
+        "https://picsum.photos/seed/vespa/600/400",
+        "https://picsum.photos/seed/vespab/600/400",
+        "https://picsum.photos/seed/vespac/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-17"
+    },
+    {
+      "id": "19",
+      "title": "Apple Watch Ultra 2",
+      "description": "Pametni sat, kupljen pre 3 meseca, bez ogrebotina, uz dodatnu narukvicu.",
+      "price": "580",
+      "category": "Elektronika",
+      "image": [
+        "https://picsum.photos/seed/applewatch/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-18"
+    },
+    {
+      "id": "20",
+      "title": "Set golf palica Callaway",
+      "description": "Kompletan set od 12 palica sa torbom, korišćen rekreativno, odlično stanje.",
+      "price": "670",
+      "category": "Sport i rekreacija",
+      "image": [
+        "https://picsum.photos/seed/golf/600/400",
+        "https://picsum.photos/seed/golfb/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-19"
+    },
+    {
+      "id": "21",
+      "title": "Kristalni luster - Bohemian stil",
+      "description": "Ručno rađen luster sa kristalima, 12 sijalica, idealan za trpezariju ili hodnik.",
+      "price": "520",
+      "category": "Nameštaj",
+      "image": [
+        "https://picsum.photos/seed/chandelier/600/400"
+      ],
+      "state": "new",
+      "sellerId": "seller-20"
+    },
+    {
+      "id": "22",
+      "title": "Kolekcija stripova Marvel - Prva izdanja",
+      "description": "Retka kolekcija od 25 stripova iz 90-ih, čuvani u zaštitnim kesama, odlično stanje.",
+      "price": "340",
+      "category": "Kolekcionarstvo",
+      "image": [
+        "https://picsum.photos/seed/comics/600/400",
+        "https://picsum.photos/seed/comicsb/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-21"
+    },
+    {
+      "id": "23",
+      "title": "Bosch bušilica-set profesionalni alat",
+      "description": "Kompletan set alata za majstore, uključuje bušilicu, testeru i brusilicu, malo korišćeno.",
+      "price": "210",
+      "category": "Alati",
+      "image": [
+        "https://picsum.photos/seed/tools/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-22"
+    },
+    {
+      "id": "24",
+      "title": "Porcelanski servis za 12 osoba - Vintage",
+      "description": "Kompletan servis od 60 delova, ručno oslikan, iz 1960-ih godina, bez oštećenja.",
+      "price": "480",
+      "category": "Kuća i bašta",
+      "image": [
+        "https://picsum.photos/seed/porcelain/600/400",
+        "https://picsum.photos/seed/porcelainb/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-23"
+    },
+    {
+      "id": "25",
+      "title": "Nintendo Switch OLED sa igricama",
+      "description": "Konzola u odličnom stanju sa 5 igrica uključenih, uz dodatni set kontrolera.",
+      "price": "320",
+      "category": "Gejming",
+      "image": [
+        "https://picsum.photos/seed/switch/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-24"
+    },
+    {
+      "id": "26",
+      "title": "Ručni sat Omega Seamaster",
+      "description": "Švajcarski sat, automatski mehanizam, čelična narukvica, servisiran nedavno.",
+      "price": "2100",
+      "category": "Nakit i satovi",
+      "image": [
+        "https://picsum.photos/seed/omega/600/400",
+        "https://picsum.photos/seed/omegab/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-25"
+    },
+    {
+      "id": "27",
+      "title": "Kajak dvosed sa veslima",
+      "description": "Plastični kajak za dve osobe, uključena dva vesla i prsluci za spasavanje.",
+      "price": "380",
+      "category": "Sport i rekreacija",
+      "image": [
+        "https://picsum.photos/seed/kayak/600/400"
+      ],
+      "state": "new",
+      "sellerId": "seller-26"
+    },
+    {
+      "id": "28",
+      "title": "Vintage pisaća mašina Olivetti",
+      "description": "Funkcionalna pisaća mašina iz 1965. godine, italijanska proizvodnja, odličan dekorativni komad.",
+      "price": "190",
+      "category": "Kolekcionarstvo",
+      "image": [
+        "https://picsum.photos/seed/typewriter/600/400",
+        "https://picsum.photos/seed/typewriterb/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-27"
+    },
+    {
+      "id": "29",
+      "title": "Espresso aparat DeLonghi Magnifica",
+      "description": "Automatski espreso aparat sa mlinom za kafu, kupljen pre godinu dana, servisiran.",
+      "price": "260",
+      "category": "Kuća i bašta",
+      "image": [
+        "https://picsum.photos/seed/coffee/600/400"
+      ],
+      "state": "used",
+      "sellerId": "seller-28"
+    },
+    {
+      "id": "30",
+      "title": "Skateboard Element - Limited Edition",
+      "description": "Profesionalna daska za skejtbord, korišćena par puta, sa originalnim točkovima.",
+      "price": "95",
+      "category": "Sport i rekreacija",
+      "image": [
+        "https://picsum.photos/seed/skateboard/600/400",
+        "https://picsum.photos/seed/skateboardb/600/400"
+      ],
+      "state": "new",
+      "sellerId": "seller-29"
+    }
+  ]
+}
