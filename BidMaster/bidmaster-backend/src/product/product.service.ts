@@ -1,26 +1,47 @@
 import { Injectable } from '@nestjs/common';
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { Prisma, Product } from 'generated/prisma/client';
 
 @Injectable()
 export class ProductService {
-  create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+  constructor(private prisma: PrismaService) {}
+
+  async create(data: Prisma.ProductUncheckedCreateInput) {
+    return this.prisma.product.create({ data });
   }
 
-  findAll() {
-    return `This action returns all product`;
+  async findAll(params: {
+    skip?: number;
+    take?: number;
+    cursor?: Prisma.ProductWhereUniqueInput;
+    where?: Prisma.ProductWhereInput;
+    orderBy?: Prisma.ProductOrderByWithAggregationInput;
+  }): Promise<Product[]> {
+    const { skip, take, cursor, where, orderBy } = params;
+    return this.prisma.product.findMany({
+      skip,
+      take,
+      cursor,
+      where,
+      orderBy
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} product`;
+  async findOne(query: Prisma.ProductWhereUniqueInput): Promise<Product | null> {
+    return this.prisma.product.findUnique({
+      where: query
+    });
   }
 
-  update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+  update(params: {
+    data: Prisma.ProductUncheckedUpdateInput;
+    where: Prisma.ProductWhereUniqueInput;
+  }) {
+    const { data, where } = params;
+    return this.prisma.product.update({ data, where });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} product`;
+  remove(where: Prisma.ProductWhereUniqueInput) {
+    return this.prisma.product.delete({ where });
   }
 }

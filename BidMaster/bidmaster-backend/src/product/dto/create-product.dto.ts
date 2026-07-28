@@ -5,4 +5,5 @@ export class CreateProductDto {
     category: string;
     image: string[];
     state: 'new' | 'used';
+    sellerId: number;
 }
