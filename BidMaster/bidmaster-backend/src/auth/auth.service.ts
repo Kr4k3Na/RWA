@@ -1,29 +1,42 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+import * as bcrypt from 'bcrypt';
 import { CreateUserDto } from 'src/user/dto/create-user.dto';
 import { UserService } from 'src/user/user.service';
 
 @Injectable()
 export class AuthService {
-    constructor(private userService: UserService) { }
+    constructor(
+        private userService: UserService,
+        private jwtService: JwtService,
+    ) { }
 
     async validateUser(email: string, pass: string) {
         const user = await this.userService.findOne({ email });
-        // hash value to string
-        if (user?.password !== pass) {
-            throw new UnauthorizedException();
-        }
+        if (!user) return null;
+
+        const isPasswordValid = await bcrypt.compare(pass, user.password);
+        if(!isPasswordValid) return null;
+
         const { password, ...result } = user;
         return result;
     }
 
-    async login(email: string, pass: string) {
-        return await this.validateUser(email, pass);
+    async login(user: any) {
+        const payload = { sub: user.id, email: user.email, role: user.role };
+        return {
+            access_token: this.jwtService.sign(payload)
+        }
     }
 
     async register(dto: CreateUserDto) {
-        const email = dto.email;
-        const user = await this.userService.findOne({ email });
-        if (user) return null;
-        return await this.userService.create(dto);
+        const userExists = await this.userService.findOne({ email: dto.email });
+        if (userExists) return null;
+        const hashedPassword = await bcrypt.hash(dto.password, 10);
+        const user = await this.userService.create({
+            ...dto,
+            password: hashedPassword,
+        });
+        return this.login(user);
     }
 }
