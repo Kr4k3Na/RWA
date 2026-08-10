@@ -1,7 +1,12 @@
 export enum Role {
-    admin = "admin",
-    buyer = "buyer",
-    seller = "seller",
+    admin = 'admin',
+    buyer = 'buyer',
+    seller = 'seller',
+}
+
+export enum AdminLevel {
+    admin = 'admin',
+    moderator = 'moderator'
 }
 
 export class User {
@@ -17,6 +22,6 @@ export class User {
     payoutInfo?: string;
     storeName?: string;
     // admin specific
-    level?: string;
+    level?: AdminLevel;
 }
 

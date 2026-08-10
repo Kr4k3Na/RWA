@@ -1,4 +1,4 @@
-import { Role } from 'generated/prisma/enums';
+import { Role, AdminLevel } from '../entities/user.entity'
 
 export class CreateUserDto {
   name: string;
@@ -15,5 +15,5 @@ export class CreateUserDto {
   storeName?: string;
 
   // admin specific
-  level?: string;
+  level?: AdminLevel;
 }
