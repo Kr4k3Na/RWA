@@ -41,7 +41,7 @@ model User {
   lastname String
   password String
   email    String @unique
-  role     Role
+  role     Role @default(buyer)
  
   // Buyer-specific
   deliveryAddress String?

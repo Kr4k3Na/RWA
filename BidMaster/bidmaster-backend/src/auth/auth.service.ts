@@ -22,11 +22,8 @@ export class AuthService {
 
     async register(dto: CreateUserDto) {
         const email = dto.email;
-        const user = this.userService.findOne({ email });
-        if(!user) {
-            // hash password
-            return await this.userService.create(dto);
-        }
-        else return null;
+        const user = await this.userService.findOne({ email });
+        if (user) return null;
+        return await this.userService.create(dto);
     }
 }
