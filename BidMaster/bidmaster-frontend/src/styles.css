@@ -1,10 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg: #120f17;
+  --bg-panel: #1b1723;
+  --bg-panel-2: #221d2c;
+  --gold: #c9a227;
+  --gold-light: #e8c468;
+  --gold-dim: #7a661e;
+  --text: #f3eee4;
+  --text-muted: #9e93ae;
+  --line: rgba(243, 238, 228, 0.1);
+  --red: #c24b3f;
+}
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  height: 100%;
-  margin: 0;
-  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Archivo', sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: #120f17;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.btn {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 11px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.01em;
+  background: none;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #161018;
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  box-shadow: 0 0 24px rgba(201, 162, 39, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-lg {
+  padding: 16px 28px;
+  font-size: 0.95rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
 }

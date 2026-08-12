@@ -8,6 +8,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { ProductEffects } from './store/product/product.effects';
+import { authReducer } from './store/auth/auth.reducer';
+import { AuthEffect } from './store/auth/auth.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,10 +17,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideStore({
       products: productsReducer,
+      auth: authReducer
     }),
-    provideEffects([ProductEffects]),
+    provideEffects([ProductEffects, AuthEffect]),
     provideHttpClient(),
-    provideEffects(),
     provideStoreDevtools({
       maxAge: 25, // broj akcija koje se pamte u istoriji
       logOnly: !isDevMode(), // onemogući mutacije u produkciji
