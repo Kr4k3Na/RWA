@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Login, LoginPayload } from '../../components/login/login';
 import { Register, RegisterPayload } from '../../components/register/register';
+import { Store } from '@ngrx/store';
+import * as AuthActions from '../../store/auth/auth.actions';
 
 type AuthMode = 'login' | 'register';
 
@@ -15,7 +17,11 @@ type AuthMode = 'login' | 'register';
 export class LoginRegister {
   mode: AuthMode = 'login';
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private store: Store
+  ) {
     // Mod (login/register) se određuje na osnovu rute, tako da /prijava i
     // /registracija otvaraju istu stranicu sa različitim aktivnim tabom.
     this.route.data.subscribe((data) => {
@@ -29,6 +35,10 @@ export class LoginRegister {
 
   onLogin(payload: LoginPayload): void {
     console.log('Login payload:', payload);
+    this.store.dispatch(AuthActions.login({ 
+      email: payload.email, 
+      password: payload.password 
+    }));
   }
 
   onRegister(payload: RegisterPayload): void {
