@@ -1,13 +1,9 @@
-export interface Auction {
-    id: string;
-    productId: string;
-    startingPrice: number;
-    currentPrice: number;
-    hammerPrice: number;
-    minimalBidStep: number;
-    reservePrice?: number;
-    startDate: string;
-    endDate: string;
-    status: 'active' | 'soon' | 'ended';
-    bidCounter: number;
+import { Product } from "./product.model";
+
+export interface AuctionLot {
+  product: Product;
+  currentBid: number;
+  closesInSeconds: number;
+  sellerName?: string;
+  bidsCount?: number;
 }
