@@ -1,0 +1,87 @@
+.lot-card {
+  display: block;
+  background: linear-gradient(160deg, var(--bg-panel), var(--bg-panel-2));
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.lot-card:hover {
+  border-color: var(--gold-dim);
+  transform: translateY(-4px);
+}
+.lot-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lot-card:hover::before {
+  opacity: 1;
+}
+
+.lot-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.lot-name {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 10px 0 18px;
+  line-height: 1.25;
+}
+
+.lot-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.lot-bid-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.lot-bid {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.lot-bid.flash {
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.lot-timer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  text-align: right;
+  color: var(--text);
+}
+.lot-timer .lbl {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}

@@ -1,0 +1,128 @@
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(160deg, var(--bg-panel), var(--bg-panel-2));
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 40px 36px;
+}
+
+.auth-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.auth-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.auth-sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 30px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.field input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+.field input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.field input.invalid {
+  border-color: var(--red);
+}
+
+.field-error {
+  color: var(--red);
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.checkbox input {
+  accent-color: var(--gold);
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.checkbox a {
+  color: var(--gold-light);
+}
+.checkbox a:hover {
+  text-decoration: underline;
+}
+.checkbox.terms {
+  margin-bottom: 22px;
+}
+
+.form-error {
+  color: var(--red);
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+.btn-block:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 26px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.auth-switch a {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+.auth-switch a:hover {
+  text-decoration: underline;
+}

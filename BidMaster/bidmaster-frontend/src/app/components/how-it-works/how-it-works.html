@@ -1,0 +1,18 @@
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-eyebrow">Proces</span>
+        <div class="section-title">Od registracije do isporuke — tri koraka</div>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step" *ngFor="let step of steps">
+        <span class="step-num">{{ step.num }}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+.trust {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 70px 32px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.trust-num {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.trust-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+@media (max-width: 860px) {
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

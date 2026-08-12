@@ -1,0 +1,98 @@
+<div class="auth-card">
+  <div class="auth-eyebrow">Pridruži se</div>
+  <h1 class="auth-title">Napravi nalog</h1>
+  <p class="auth-sub">Registracija traje manje od dva minuta. Licitiraj čim potvrdiš identitet.</p>
+
+  <form #registerForm="ngForm" (ngSubmit)="submit(registerForm)" novalidate>
+    <div class="field">
+      <label for="fullName">Ime i prezime</label>
+      <input
+        id="fullName"
+        name="fullName"
+        type="text"
+        required
+        minlength="2"
+        [(ngModel)]="fullName"
+        #fullNameModel="ngModel"
+        [class.invalid]="fullNameModel.invalid && fullNameModel.touched"
+        placeholder="Marko Marković"
+        autocomplete="name"
+      />
+      <p class="field-error" *ngIf="fullNameModel.invalid && fullNameModel.touched">
+        Unesi ime i prezime.
+      </p>
+    </div>
+
+    <div class="field">
+      <label for="email">Email adresa</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        email
+        [(ngModel)]="email"
+        #emailModel="ngModel"
+        [class.invalid]="emailModel.invalid && emailModel.touched"
+        placeholder="ime@primer.com"
+        autocomplete="email"
+      />
+      <p class="field-error" *ngIf="emailModel.invalid && emailModel.touched">
+        Unesi ispravnu email adresu.
+      </p>
+    </div>
+
+    <div class="field">
+      <label for="password">Lozinka</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        required
+        minlength="6"
+        [(ngModel)]="password"
+        #passwordModel="ngModel"
+        [class.invalid]="passwordModel.invalid && passwordModel.touched"
+        placeholder="••••••••"
+        autocomplete="new-password"
+      />
+      <p class="field-error" *ngIf="passwordModel.invalid && passwordModel.touched">
+        Lozinka mora imati najmanje 6 karaktera.
+      </p>
+    </div>
+
+    <div class="field">
+      <label for="confirmPassword">Potvrdi lozinku</label>
+      <input
+        id="confirmPassword"
+        name="confirmPassword"
+        type="password"
+        required
+        [(ngModel)]="confirmPassword"
+        #confirmPasswordModel="ngModel"
+        [class.invalid]="passwordsMismatch && confirmPasswordModel.touched"
+        placeholder="••••••••"
+        autocomplete="new-password"
+      />
+      <p class="field-error" *ngIf="passwordsMismatch && confirmPasswordModel.touched">
+        Lozinke se ne poklapaju.
+      </p>
+    </div>
+
+    <label class="checkbox terms">
+      <input type="checkbox" name="acceptedTerms" [(ngModel)]="acceptedTerms" />
+      Prihvatam <a href="#">uslove korišćenja</a> i <a href="#">politiku privatnosti</a>
+    </label>
+
+    <p class="form-error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <button type="submit" class="btn btn-gold btn-lg btn-block" [disabled]="submitting">
+      {{ submitting ? 'Kreiranje naloga...' : 'Napravi nalog' }}
+    </button>
+  </form>
+
+  <p class="auth-switch">
+    Već imaš nalog?
+    <a routerLink="/prijava">Prijavi se</a>
+  </p>
+</div>

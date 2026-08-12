@@ -1,0 +1,15 @@
+<a class="lot-card" [routerLink]="['/proizvod', lot.product.id]">
+  <div class="lot-id">{{ lot.product.id }}</div>
+  <div class="lot-name">{{ lot.product.title }}</div>
+
+  <div class="lot-row">
+    <div>
+      <div class="lot-bid-label">Trenutna ponuda</div>
+      <div class="lot-bid" [class.flash]="flash">{{ formattedBid }}</div>
+    </div>
+    <div class="lot-timer">
+      <span class="lbl">Zatvara se za</span>
+      {{ formattedTimer }}
+    </div>
+  </div>
+</a>

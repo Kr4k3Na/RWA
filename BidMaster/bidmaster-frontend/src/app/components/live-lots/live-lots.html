@@ -1,0 +1,20 @@
+<section class="section" id="lots">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-eyebrow">Trenutno u toku</span>
+        <div class="section-title">Lotovi koji se licitiraju baš sada</div>
+      </div>
+      <p class="section-desc">
+        Cene rastu uživo. Klikni na lot da se priključiš licitaciji pre nego što otkuca poslednja sekunda.
+      </p>
+    </div>
+
+    <div class="lots-strip">
+      <app-lot-card
+        *ngFor="let lot of lots; trackBy: trackByProductId"
+        [lot]="lot"
+      ></app-lot-card>
+    </div>
+  </div>
+</section>

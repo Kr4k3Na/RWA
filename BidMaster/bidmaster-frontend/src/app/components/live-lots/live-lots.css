@@ -1,0 +1,43 @@
+.section {
+  padding: 110px 32px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  max-width: 600px;
+  line-height: 1.1;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  max-width: 340px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.lots-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 22px;
+}
