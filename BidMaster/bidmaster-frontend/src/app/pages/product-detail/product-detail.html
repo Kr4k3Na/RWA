@@ -1,0 +1,73 @@
+@if (lot!=null) {
+<!-- Gallery -->
+<div class="gallery">
+    <div class="gallery-main">
+        <img [src]="lot.product.image[activeImageIndex]" [alt]="lot.product.title" />
+        <span class="badge" [class.badge-used]="lot.product.state === 'used'">
+            {{ stateLabel }}
+        </span>
+    </div>
+    <div class="gallery-thumbs" *ngIf="lot.product.image.length > 1">
+        <button type="button" class="thumb" *ngFor="let img of lot.product.image; let i = index"
+            [class.active]="i === activeImageIndex" (click)="selectImage(i)">
+            <img [src]="img" [alt]="lot.product.title + ' - slika ' + (i + 1)" />
+        </button>
+    </div>
+</div>
+
+<!-- Info & bidding -->
+<div class="info">
+    <div class="lot-id">{{ lot.product.id }} · {{ lot.product.category }}</div>
+    <h1 class="title">{{ lot.product.title }}</h1>
+
+    <p class="description">{{ lot.product.description }}</p>
+
+    <div class="meta-row">
+        <div class="meta-item">
+            <span class="meta-label">Prodavac</span>
+            <span class="meta-value">{{ lot.sellerName || lot.product.sellerId }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Broj ponuda</span>
+            <span class="meta-value">{{ lot.bidsCount || 0 }}</span>
+        </div>
+    </div>
+
+    <div class="bid-panel">
+        <div class="bid-panel-row">
+            <div>
+                <div class="bid-label">Trenutna ponuda</div>
+                <div class="bid-amount">€{{ lot.currentBid | number:'1.0-0' }}</div>
+            </div>
+            <div class="timer">
+                <span class="lbl">Zatvara se za</span>
+                <span class="timer-value">
+                    {{ minutes < 10 ? '0' + minutes : minutes }}:{{ seconds < 10 ? '0' + seconds : seconds }} </span>
+            </div>
+        </div>
+
+        <form class="bid-form" (ngSubmit)="submitBid()">
+            <label for="bidAmount">Tvoja ponuda (min. €{{ minBidSuggestion | number:'1.0-0' }})</label>
+            <div class="bid-input-row">
+                <span class="currency">€</span>
+                <input id="bidAmount" name="bidAmount" type="number" [min]="minBidSuggestion" step="1"
+                    [(ngModel)]="bidAmount" />
+                <button type="submit" class="btn btn-gold btn-lg">Licitiraj</button>
+            </div>
+            <p class="bid-error" *ngIf="bidError">{{ bidError }}</p>
+            <p class="bid-success" *ngIf="bidSuccess">Ponuda uspešno postavljena!</p>
+        </form>
+    </div>
+</div>
+
+<ng-template #notFoundTpl>
+    <div class="wrap not-found">
+        <h1>Proizvod nije pronađen</h1>
+        <p>Lot koji tražiš više nije dostupan ili je link netačan.</p>
+        <a routerLink="/" class="btn btn-gold btn-lg">Nazad na aukcije</a>
+    </div>
+</ng-template>
+
+
+<app-footer></app-footer>
+}

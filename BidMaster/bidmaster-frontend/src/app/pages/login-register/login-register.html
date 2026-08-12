@@ -1,0 +1,6 @@
+@if (mode === 'login') {
+<app-login (login)="onLogin($event)"></app-login>
+}
+@else if (mode === 'register') {
+<app-register (register)="onRegister($event)"></app-register>
+}

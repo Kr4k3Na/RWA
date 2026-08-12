@@ -1,0 +1,245 @@
+.page {
+  padding: 140px 32px 100px;
+  min-height: 70vh;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+  transition: color 0.2s ease;
+}
+.back-link:hover {
+  color: var(--gold-light);
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* Gallery */
+.gallery-main {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  aspect-ratio: 4 / 3;
+}
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 2px;
+  background: rgba(201, 162, 39, 0.15);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-light);
+}
+.badge.badge-used {
+  background: rgba(158, 147, 174, 0.15);
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+.thumb {
+  width: 76px;
+  height: 76px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+  background: none;
+}
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.thumb.active,
+.thumb:hover {
+  opacity: 1;
+  border-color: var(--gold);
+}
+
+/* Info */
+.lot-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.meta-row {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.meta-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.meta-value {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* Bid panel */
+.bid-panel {
+  background: linear-gradient(160deg, var(--bg-panel), var(--bg-panel-2));
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 26px;
+}
+
+.bid-panel-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bid-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.bid-amount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.timer {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+}
+.timer .lbl {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.timer-value {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.bid-form label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.bid-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.currency {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+}
+.bid-input-row input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+}
+.bid-input-row input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.bid-error {
+  color: var(--red);
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+.bid-success {
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.not-found {
+  text-align: center;
+  padding: 100px 0;
+}
+.not-found h1 {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+.not-found p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+@media (max-width: 900px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+}
