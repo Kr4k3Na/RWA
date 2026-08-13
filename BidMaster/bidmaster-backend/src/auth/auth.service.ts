@@ -30,7 +30,7 @@ export class AuthService {
                 id: user.id,
                 email: user.email,
                 name: user.name,
-                lastName: user.lastName
+                lastname: user.lastname
             }
         }
     }
@@ -42,6 +42,7 @@ export class AuthService {
         const user = await this.userService.create({
             ...dto,
             password: hashedPassword,
+            role: 'buyer'
         });
         return this.login(user);
     }

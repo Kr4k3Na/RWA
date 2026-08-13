@@ -17,8 +17,8 @@ export class AuthService {
     }) {
         const [firstName, lastName] = data.fullName.split(' ');
         const payload = {
-            firstName: firstName,
-            lastName: lastName,
+            name: firstName,
+            lastname: lastName,
             email: data.email,
             password: data.password
         }

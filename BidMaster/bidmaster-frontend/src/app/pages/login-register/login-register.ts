@@ -34,7 +34,6 @@ export class LoginRegister {
   }
 
   onLogin(payload: LoginPayload): void {
-    console.log('Login payload:', payload);
     this.store.dispatch(AuthActions.login({ 
       email: payload.email, 
       password: payload.password 
@@ -43,5 +42,10 @@ export class LoginRegister {
 
   onRegister(payload: RegisterPayload): void {
     console.log('Register payload:', payload);
+    this.store.dispatch(AuthActions.register({
+      fullName: payload.fullName,
+      email: payload.email,
+      password: payload.password
+    }))
   }
 }
