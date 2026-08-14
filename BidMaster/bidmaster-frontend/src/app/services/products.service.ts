@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { Product } from '../models/product.model';
 import { AuctionLot } from '../models/auction.model';
 
@@ -104,6 +104,11 @@ export class ProductsService {
   );
 
   readonly lots = this._lots.asReadonly();
+
+  /** Jedinstvena lista kategorija, izvedena iz trenutnih lotova (za filter panel). */
+  readonly categories = computed(() =>
+    Array.from(new Set(this._lots().map((lot) => lot.product.category))).sort()
+  );
 
   getLotByProductId(id: string): AuctionLot | undefined {
     return this._lots().find((lot) => lot.product.id === id);

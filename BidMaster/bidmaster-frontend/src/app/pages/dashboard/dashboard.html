@@ -1,1 +1,41 @@
-<p>dashboard works!</p>
+<app-background-canvas></app-background-canvas>
+
+<div class="content">
+  <app-header></app-header>
+
+  <main class="page">
+    <div class="wrap">
+      <div class="page-head">
+        <span class="section-eyebrow">Sve aukcije</span>
+        <h1 class="page-title">Pretraži sve lotove na aukciji</h1>
+        <p class="page-desc">
+          Filtriraj po kategoriji, stanju i ceni da bi brzo pronašao ono što tražiš.
+        </p>
+      </div>
+
+      <app-filter-panel
+        [categories]="categories"
+        (filtersChange)="onFiltersChange($event)"
+      ></app-filter-panel>
+
+      <div class="results-meta" *ngIf="filteredLots.length">
+        {{ filteredLots.length }} {{ filteredLots.length === 1 ? 'lot pronađen' : 'lota pronađeno' }}
+      </div>
+
+      <div class="auctions-grid" *ngIf="filteredLots.length; else emptyState">
+        <app-auction-card
+          *ngFor="let lot of filteredLots; trackBy: trackByProductId"
+          [lot]="lot"
+        ></app-auction-card>
+      </div>
+
+      <ng-template #emptyState>
+        <div class="empty-state">
+          <p>Nema lotova koji odgovaraju izabranim filterima.</p>
+        </div>
+      </ng-template>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>

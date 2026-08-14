@@ -1,0 +1,54 @@
+.page {
+  padding: 140px 32px 100px;
+  min-height: 70vh;
+}
+
+.page-head {
+  margin-bottom: 40px;
+}
+
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.page-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.page-desc {
+  color: var(--text-muted);
+  max-width: 480px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.results-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.auctions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 24px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--text-muted);
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+}
