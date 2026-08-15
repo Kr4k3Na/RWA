@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuctionLot } from '../../models/auction.model';
 import { LotCardComponent } from '../lot-card/lot-card';
-import { ProductsService } from '../../services/products.service';
+import { LotService } from '../../services/lot.service';
 
 @Component({
   selector: 'app-live-lots',
@@ -18,18 +18,18 @@ export class LiveLotsComponent implements OnInit, OnDestroy {
   private bidBumpHandle?: ReturnType<typeof setInterval>;
   private reduceMotion = false;
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private lotService: LotService) {}
 
   ngOnInit(): void {
     this.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    this.lots = this.productsService.lots();
+    this.lots = this.lotService.lots();
 
     this.tickHandle = setInterval(() => this.tickTimers(), 1000);
 
     if (!this.reduceMotion) {
       this.bidBumpHandle = setInterval(() => {
-        this.productsService.bumpRandomLot();
-        this.lots = this.productsService.lots();
+        this.lotService.bumpRandomLot();
+        this.lots = this.lotService.lots();
       }, 2600);
     }
   }

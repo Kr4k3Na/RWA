@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AuctionLot } from '../../models/auction.model';
 import { Footer } from '../../components/footer/footer';
-import { ProductsService } from '../../services/products.service';
+import { LotService } from '../../services/lot.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -30,7 +30,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService
+    private lotService: LotService
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const lot = this.productsService.getLotByProductId(id);
+    const lot = this.lotService.getLotByProductId(id);
     if (!lot) {
       this.notFound = true;
       return;
@@ -83,8 +83,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.productsService.placeBid(this.lot.product.id, this.bidAmount);
-    this.lot = this.productsService.getLotByProductId(this.lot.product.id) ?? this.lot;
+    this.lotService.placeBid(this.lot.product.id, this.bidAmount);
+    this.lot = this.lotService.getLotByProductId(this.lot.product.id) ?? this.lot;
     this.bidError = null;
     this.bidSuccess = true;
     this.bidAmount = this.minBidSuggestion;

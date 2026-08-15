@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuctionLot } from '../../models/auction.model';
 import { AuctionFilters, DEFAULT_FILTERS } from '../../models/filter.model';
-import { ProductsService } from '../../services/products.service';
+import { LotService } from '../../services/lot.service';
 import { BackgroundCanvasComponent } from '../../components/background-canvas/background-canvas';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
@@ -31,11 +31,11 @@ export class Dashboard implements OnInit, OnDestroy {
 
   private tickHandle?: ReturnType<typeof setInterval>;
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private lotService: LotService) {}
 
   ngOnInit(): void {
-    this.allLots = this.productsService.lots();
-    this.categories = this.productsService.categories();
+    this.allLots = this.lotService.lots();
+    this.categories = this.lotService.categories();
     this.applyFilters();
 
     // Tajmeri idu dalje i na ovoj stranici, isto kao na početnoj.

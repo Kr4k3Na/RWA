@@ -92,7 +92,7 @@ const MOCK_PRODUCTS: Product[] = [
 ];
 
 @Injectable({ providedIn: 'root' })
-export class ProductsService {
+export class LotService {
   private readonly _lots = signal<AuctionLot[]>(
     MOCK_PRODUCTS.map((product, idx) => ({
       product,
