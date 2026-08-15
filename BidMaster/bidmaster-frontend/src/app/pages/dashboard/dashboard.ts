@@ -7,7 +7,7 @@ import { BackgroundCanvasComponent } from '../../components/background-canvas/ba
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
 import { FilterPanel } from '../../components/filter-panel/filter-panel';
-import { AuctionCard } from '../../components/auction-card/auction-card';
+import { LotCardComponent } from '../../components/lot-card/lot-card';
 
 @Component({
   selector: 'app-auctions',
@@ -18,7 +18,7 @@ import { AuctionCard } from '../../components/auction-card/auction-card';
     Header,
     Footer,
     FilterPanel,
-    AuctionCard,
+    LotCardComponent,
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',

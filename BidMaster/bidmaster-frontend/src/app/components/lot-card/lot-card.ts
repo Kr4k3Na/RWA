@@ -32,6 +32,14 @@ export class LotCardComponent implements OnChanges {
     }
   }
 
+   get coverImage(): string {
+    return this.lot.product.image[0] ?? '';
+  }
+
+  get stateLabel(): string {
+    return this.lot.product.state === 'new' ? 'Novo' : 'Polovno';
+  }
+
   get formattedBid(): string {
     return '€' + this.lot.currentBid.toLocaleString('de-DE');
   }

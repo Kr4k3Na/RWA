@@ -23,10 +23,10 @@
       </div>
 
       <div class="auctions-grid" *ngIf="filteredLots.length; else emptyState">
-        <app-auction-card
+        <app-lot-card
           *ngFor="let lot of filteredLots; trackBy: trackByProductId"
           [lot]="lot"
-        ></app-auction-card>
+        ></app-lot-card>
       </div>
 
       <ng-template #emptyState>
