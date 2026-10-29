@@ -1,13 +1,14 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, ForbiddenException, Get, Param, Patch, Post, Query, Request, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/guards/roles.guard';
 import { Roles } from 'src/auth/decorators/roles.decorator';
-import { Role } from 'src/user/entities/user.entity'
+import { Role } from 'src/user/entities/user.entity';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('users')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
@@ -42,7 +43,10 @@ export class UserController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
-  update(@Param('id') id: string, @Body() dto: any) {
+  update(@Param('id') id: string, @Body() dto: UpdateUserDto, @Request() req) {
+    const isSelf = req.user.id === Number(id);
+    const isAdmin = req.user.role === Role.admin;
+    if (!isSelf && !isAdmin) throw new ForbiddenException();
     return this.userService.update({ where: { id: Number(id) }, data: dto });
   }
 

@@ -16,9 +16,9 @@ export class UserService {
     cursor?: Prisma.UserWhereUniqueInput;
     where?: Prisma.UserWhereInput;
     orderBy?: Prisma.UserOrderByWithRelationInput;
-  }): Promise<User[]> {
+  }): Promise<Omit<User, 'password'>[]> {
     const { skip, take, cursor, where, orderBy } = params;
-    return this.prisma.user.findMany({ skip, take, cursor, where, orderBy });
+    return this.prisma.user.findMany({ skip, take, cursor, where, orderBy, omit: { password: true } });
   }
 
   async findOne(where: Prisma.UserWhereUniqueInput): Promise<User | null> {

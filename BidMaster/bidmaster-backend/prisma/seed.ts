@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { PrismaClient } from '../generated/prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
+import * as bcrypt from 'bcrypt';
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
@@ -11,6 +12,8 @@ async function main() {
   await prisma.auction.deleteMany();
   await prisma.product.deleteMany();
   await prisma.user.deleteMany();
+     
+  const hash = await bcrypt.hash('password123', 10);
 
   // --- Users ---
   const seller = await prisma.user.create({
@@ -18,7 +21,7 @@ async function main() {
       name: 'Marko',
       lastname: 'Markovic',
       email: 'seller@example.com',
-      password: 'password123',
+      password: hash,
       role: 'seller',
       storeName: 'Markov Antikvarijat',
       payoutInfo: 'RS35123456789012345678',
@@ -30,7 +33,7 @@ async function main() {
       name: 'Ana',
       lastname: 'Anic',
       email: 'buyer1@example.com',
-      password: 'password123',
+      password: hash,
       role: 'buyer',
       deliveryAddress: 'Bulevar Oslobodjenja 10, Beograd',
     },
@@ -41,7 +44,7 @@ async function main() {
       name: 'Petar',
       lastname: 'Petrovic',
       email: 'buyer2@example.com',
-      password: 'password123',
+      password: hash,
       role: 'buyer',
       deliveryAddress: 'Knez Mihailova 5, Beograd',
     },
@@ -52,7 +55,7 @@ async function main() {
       name: 'Admin',
       lastname: 'Administratorovic',
       email: 'admin@example.com',
-      password: 'password123',
+      password: hash,
       role: 'admin',
       level: 'admin',
     },
